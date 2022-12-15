@@ -1,22 +1,23 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.User;
-import com.example.demo.service.UserDaoService;
+import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+
 public class UserController {
-    private final UserDaoService userService;
+    private final UserService userService;
 
     @Autowired
-    public UserController(UserDaoService userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
-    @GetMapping("/users")
+    @RequestMapping("/users")
     public String getAllUsers(ModelMap model) {
         model.addAttribute("user", userService.getUsersList());
         return "users";

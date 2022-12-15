@@ -4,7 +4,7 @@ import com.example.demo.model.User;
 
 import java.util.List;
 
-public interface UserDaoService {
+public interface UserService {
     public void addUser(User user);
 
     public void deleteUser(Long id);

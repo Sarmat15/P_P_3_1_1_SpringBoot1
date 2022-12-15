@@ -12,19 +12,19 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
 
     @Column(name = "age")
-    private int age;
+    private Integer age;
 
-    @Column(name = "phoneNumber")
-    private int phoneNumber;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
     public User() {
     }
 
-    public User(String name, String lastName, int age, int phoneNumber) {
+    public User(String name, String lastName, Integer age, String phoneNumber) {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
@@ -55,19 +55,19 @@ public class User {
         this.lastName = lastName;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
