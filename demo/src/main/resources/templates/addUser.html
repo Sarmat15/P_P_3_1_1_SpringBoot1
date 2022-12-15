@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add new User</title>
+  <style>
+    #saveButton {
+      background-color: dodgerblue;
+      color: azure;
+      border: 0;
+      font-size: medium;
+      width: 200px;
+      height: 35px;
+    }
+    a {
+      text-decoration: none;
+      color: darkred;
+      font-size: medium;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    td {
+      font-size: x-large;
+      border: 0;
+    }
+    .data {
+      width: 200px;
+      height: 25px;
+      margin-left: 10px;
+    }
+    table {
+      border: 0;
+    }
+    form {
+      margin-left: 25px;
+    }
+  </style>
+</head>
+<body>
+<h1>Add new User</h1><br>
+<form th:method="post" th:action="@{/addUser}" th:object="${user}" >
+  <table>
+    <tr><td>Name</td><td><input th:type="text" th:field="*{name}" required  class="data"></td></tr>
+    <tr><td>Surname</td><td><input th:type="text" required th:field="*{lastName}" class="data"></td></tr>
+    <tr><td>age</td><td><input th:type="text" required  th:field="*{age}" class="data"></td></tr>
+    <tr><td>PhoneNumber</td><td><input th:type="text" required  th:field="*{phoneNumber}" class="data"></td></tr>
+    <tr><td colspan="2" height="20px"></td></tr>
+    <tr style="text-align: right;"><td colspan="2"><input type="submit" value="Save User" id="saveButton"/>&nbsp;&nbsp;&nbsp;<a th:href="@{/}">Cancel</a></td></tr>
+  </table><br>
+</form>
+</body>
+</html>
